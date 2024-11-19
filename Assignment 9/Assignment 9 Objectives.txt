@@ -1,0 +1,12 @@
+Assignment 9 Objectives
+- Use python to create web app
+- Connect to oracle database
+- Create login and new user pages
+  - Connect new user to customer database ie. add new user information to db
+- Profile for accounts
+  - If user: show all orders
+  - if seller: show all products
+- shopping cart connects to order history
+- main page features: categories, sellers, product, select products form main page.
+- separate product pages
+- 
