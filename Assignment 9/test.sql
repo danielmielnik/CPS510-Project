@@ -86,4 +86,6 @@ SELECT * FROM dual;
 
 SELECT * FROM Customers;
 
+SELECT * FROM user_tables;
+
 
