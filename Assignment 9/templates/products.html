@@ -1,0 +1,27 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Product Results</h2>
+
+    {% if products and products|length > 0 %}
+        <div class="list-group mt-4">
+            {% for product in products %}
+                <a href="{{ url_for('product_info', product_id=product[0]) }}" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">{{ product[1] }} 
+                        <span class="badge bg-primary float-end">${{ "%.2f"|format(product[3]) }}</span>
+                    </h5>
+                    <p class="mb-1">{{ product[2][:150] }}...</p>
+                    <small class="text-muted">
+                        Category: {{ product[5] }} | Rating: {{ "%.1f"|format(product[6]) }} | Weight: {{ "%.2f"|format(product[4]) }} kg
+                    </small>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning mt-4" role="alert">
+            No products found.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

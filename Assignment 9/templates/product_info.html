@@ -1,0 +1,34 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">{{ product[1] }}</h2>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h4>Product Description</h4>
+            <p>{{ product[2] }}</p>
+
+            <h5>Details:</h5>
+            <ul>
+                <li><strong>Price:</strong> ${{ "%.2f"|format(product[3]) }}</li>
+                <li><strong>Weight:</strong> {{ "%.2f"|format(product[4]) }} kg</li>
+                <li><strong>Category:</strong> {{ product[5] }}</li>
+                <li><strong>Rating:</strong> {{ "%.1f"|format(product[6]) }} / 5</li>
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h4>Buy This Product</h4>
+            <form method="POST" action="/buy/{{ product[0] }}">
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn btn-success">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,46 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Search Page</h2>
+    
+    <!-- Search by Product ID -->
+    <div class="mt-4">
+        <h4>Search by Product ID</h4>
+        <form method="GET" action="/search/product">
+            <div class="mb-3">
+                <label for="product_id" class="form-label">Product ID</label>
+                <input type="text" class="form-control" id="product_id" name="product_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search by Product ID</button>
+        </form>
+    </div>
+
+    <!-- Search by Seller Name -->
+    <div class="mt-4">
+        <h4>Search by Seller Name</h4>
+        <form method="GET" action="/search/seller">
+            <div class="mb-3">
+                <label for="seller_name" class="form-label">Seller Name</label>
+                <input type="text" class="form-control" id="seller_name" name="seller_name" required>
+            </div>
+            <button type="submit" class="btn btn-success">Search by Seller Name</button>
+        </form>
+    </div>
+
+    <!-- Search by Category -->
+    <div class="mt-4">
+        <h4>Search by Category</h4>
+        <form method="GET" action="/search/category">
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="category" required>
+                    <option value="Wood">Wood</option>
+                    <option value="Materials">Materials</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-warning">Search by Category</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
